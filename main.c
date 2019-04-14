@@ -5,9 +5,9 @@ int main()
 	char message[500], letter;
 	int i, rotation;
 	
-	printf("Enter a message to encode: ");
+	printf("Enter a message to encode:\n");
 	scanf("%[^\n]s", message);
-	printf("Enter rotational value as an integer: ");
+	printf("Enter the rotational value as an integer:\n");
 	scanf("%d", &rotation);
 	
 	for(i=0; message[i] != '\0'; ++i){
