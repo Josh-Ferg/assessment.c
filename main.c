@@ -1,17 +1,39 @@
 #include<stdio.h>
-
+ 
 int main()
 {
-char REAL_ALPHABET_ASCII[] ={65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122};
-char fake_alphabet_ascii[] ={70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,65,66,67,68,69};
-int rotartay=5, correction;
-int count;
-correction=rotartay-rotartay;
-for (count=0;count<=51;count++){
-    
-
-printf("%c  %d      %c  %d\n", REAL_ALPHABET_ASCII[count], REAL_ALPHABET_ASCII[count], fake_alphabet_ascii[correction], fake_alphabet_ascii[correction]);  
-correction++;
-}
-    return 0;
+	char message[500], letter;
+	int i, rotation;
+	
+	printf("Enter a message to encode: ");
+	scanf("%[^\n]s", message);
+	printf("Enter rotational value as an integer: ");
+	scanf("%d", &rotation);
+	
+	for(i=0; message[i] != '\0'; ++i){
+		letter = message[i];
+		
+		if(letter >='a'&& letter <='z'){
+			letter=letter + rotation;
+			
+			if(letter>'z'){
+				letter= letter -'z'+'a'- 1;
+			}
+			
+			message[i] = letter;
+		}
+		else if(letter >= 'A' && letter <= 'Z'){
+			letter = letter + rotation;
+			
+			if(letter > 'Z'){
+				letter = letter - 'Z' + 'A' - 1;
+			}
+			
+			message[i] = letter;
+		}
+	}
+	
+	printf("%s\n", message);
+	
+	return 0;
 }
