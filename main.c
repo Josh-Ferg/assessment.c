@@ -69,7 +69,7 @@ int main()
 	
 	for(i=0; message[i] != '\0'; ++i) { //Starts the for loop at the first carachter of the message, continues the loop for the duration of the message.
 		
-		if(message[i] <= 'A' || message[i] >= 'Z') { 
+		if(message[i] < 'A' || message[i] > 'Z') { 
 		    message[i] = message[i]; //Only continue if the current carachter of the message is a capital letter
 		}
 		else {
@@ -97,7 +97,7 @@ int main()
 	
 	for(i=0; message[i] != '\0'; ++i){ //Starts the for loop at the first carachter of the message, continues the loop for the duration of the message.
 		
-		if(message[i] <= 'A' || message[i] >= 'Z'){
+		if(message[i] < 'A' || message[i] > 'Z'){
 		    message[i] = message[i]; //Only continue if the current carachter of the message is a capital letter
 		}
 		else {
@@ -116,6 +116,7 @@ int main()
 	printf("The decrypted message is:\n%s\n", message); //Prints the decrypted message
 	
 	}
+	
 	else {
 	    printf("Please enter one of the valid numbers from the menu.\n"); //In the menu if the user selects an option that isn't available this message prints
 	}
